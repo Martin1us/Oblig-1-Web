@@ -9,7 +9,6 @@ function fetchHomeData() {
     })
     .then((posts) => {
         let container = document.getElementById("main-container");
-        container.innerHTML = "";  
 
         let i = 1;
         for (const post of posts) {
