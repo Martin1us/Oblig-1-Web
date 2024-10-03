@@ -58,16 +58,7 @@ body {
     align-self: stretch;
 }
 
-.main-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: stretch;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    align-self: stretch;
-}
+
 
 .post-container article {
     margin: 10px;

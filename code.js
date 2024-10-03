@@ -14,17 +14,13 @@ function fetchHomeData() { // Funksjon for å hente data
     })
 }
 
-
-
     function loadpost() { // Funksjon for å laste opp postene
-        let container = document.getElementById("main-container");
+        let container = document.getElementById("post-container");
 
         let i = 1, limit = 12;
         for (const post of posts) {
             if (i <= limit) {
                 const article = document.createElement("article");
-                
-                article.classList.add("post-container"); 
             
                 const title = document.createElement("h1");
                 title.textContent = post.title;
@@ -40,7 +36,7 @@ function fetchHomeData() { // Funksjon for å hente data
         }
     }
 
-fetchHomeData();
+fetchHomeData(); // Kjører funksjonen for å hente data
 
 window.onscroll = function() { // Sjekker når bruker har skrollet til bunn av siden
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
