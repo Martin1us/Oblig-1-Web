@@ -1,5 +1,4 @@
 let posts = []; // Array for å lagre postene
-let loading = false; // Sjekker om dataen er ferdig lastet
 
 function fetchHomeData() { // Funksjon for å hente data
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -14,6 +13,8 @@ function fetchHomeData() { // Funksjon for å hente data
         loadpost();
     })
 }
+
+
 
     function loadpost() { // Funksjon for å laste opp postene
         let container = document.getElementById("main-container");
