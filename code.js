@@ -1,5 +1,7 @@
-function fetchHomeData() {
-    const limit = 15;
+let posts = []; // Array for å lagre postene
+let loading = false; // Sjekker om dataen er ferdig lastet
+
+function fetchHomeData() { // Funksjon for å hente data
     fetch("https://jsonplaceholder.typicode.com/posts")
     .then((response) => {
         if (!response.ok) {
@@ -7,10 +9,16 @@ function fetchHomeData() {
         }
         return response.json();
     })
-    .then((posts) => {
+    .then((postData) => { // Funksjon til å håndtere data
+        posts = postData;
+        loadpost();
+    })
+}
+
+    function loadpost() { // Funksjon for å laste opp postene
         let container = document.getElementById("main-container");
 
-        let i = 1;
+        let i = 1, limit = 12;
         for (const post of posts) {
             if (i <= limit) {
                 const article = document.createElement("article");
@@ -29,14 +37,12 @@ function fetchHomeData() {
             }
             i++;
         }
-    })
-    .catch((error) => {
-        console.error("There was an error fetching posts:", error);
-    });
-}
+    }
 
 fetchHomeData();
 
-window.addEventListener("scroll", () => {
+window.onscroll = function() { // Sjekker når bruker har skrollet til bunn av siden
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         fetchHomeData();
-}); 
+    }
+}; 

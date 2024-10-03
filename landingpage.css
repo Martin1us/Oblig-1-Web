@@ -196,7 +196,7 @@ body {
 
 }
 
-#sec4 {
+.sec4 {
     display: flex;
     justify-content: space-around;
     align-items: center;
