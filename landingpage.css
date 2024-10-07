@@ -173,6 +173,7 @@ body {
     flex-wrap: wrap;
     align-items: stretch;
     flex-direction: row;
+    text-shadow: 1px 1px 5px #000;
 }
 
 .section3-section cite {
